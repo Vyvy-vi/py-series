@@ -68,6 +68,21 @@ def nth_power_sum_check(n, ls):
             return False
     return True
 
+def n2_sum(ls):
+    return nth_power_sum_check(2, ls)
+
+def n3_sum(ls):
+    return nth_power_sum_check(3, ls)
+
+def n4_sum(ls):
+    return nth_power_sum_check(4, ls)
+
+def n5_sum(ls):
+    return nth_power_sum_check(5, ls)
+
+def n6_sum(ls):
+    return nth_power_sum_check(6, ls)
+
 def print_series(ls, t):
     type= ["Fibbonaci","AP","GP","Sum of square","Sum of Cubes","Sum of N to 4th power","Sum of N to 5th power"]
     type=type[t]
