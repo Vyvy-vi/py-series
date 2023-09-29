@@ -1,6 +1,6 @@
 import math
-from aps import apc
-from gps import gpc
+from aps.aps import aps
+from gps.gps import gps
 def ui():
     ls = inp_ls()
     if fibonacci(ls):
@@ -91,9 +91,9 @@ def print_series(ls, t):
     if t==0:
         m,n= None,None
     elif t==1:
-        m,n= apc(ls[0],ls[1]-ls[0],n)
+        m,n= aps(ls[0],ls[1]-ls[0],n)
     elif t==2:
-        m,n= gpc(ls[0],ls[1]//ls[0],n)
+        m,n= gps(ls[0],ls[1]//ls[0],n)
     else:
         m,n= None,None
     print(f'The series is given by:\n{m}...\nThe sum of the "{type}" is:\n{n}')
