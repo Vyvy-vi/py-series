@@ -1,4 +1,4 @@
-def gps(a, r, n):
+def generate_gp(a, r, n):
     ls = [a]
     for i in range(n-1):
         a *= r
