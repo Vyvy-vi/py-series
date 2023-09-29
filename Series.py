@@ -62,50 +62,26 @@ def gp(ls):
             return False
     return True
 
-def n2_sum(ls):
-    #ls=[1,4,9,16]
-    for i in range(len(ls)-1):
-        if math.sqrt(ls[i])+1==math.sqrt(ls[i+1]):
-            continue
-        else:
+def nth_power_sum_check(n, ls):
+    for i in range(len(ls) - 1):
+        if abs(ls[i] ** (1/n) - ls[i+1] ** (1/n)) > 1e-9:
             return False
     return True
+
+def n2_sum(ls):
+    return nth_power_sum_check(2, ls)
 
 def n3_sum(ls):
-    #ls=[1,8,27]
-    for i in range(len(ls)-1):
-        if (ls[i])**(1/3)+1==(ls[i+1])**(1/3):
-            continue
-        else:
-            return False
-    return True
+    return nth_power_sum_check(3, ls)
 
 def n4_sum(ls):
-    #ls=[1,16,81]
-    for i in range(len(ls)-1):
-        if (ls[i])**(1/4)+1==(ls[i+1])**(1/4):
-            continue
-        else:
-            return False
-    return True
+    return nth_power_sum_check(4, ls)
 
 def n5_sum(ls):
-    #ls=[1,32,243]
-    for i in range(len(ls)-1):
-        if (ls[i])**(1/5)+1==(ls[i+1])**(1/5):
-            continue
-        else:
-            return False
-    return True
+    return nth_power_sum_check(5, ls)
 
 def n6_sum(ls):
-    #ls=[1,64,729]
-    for i in range(len(ls)-1):
-        if (ls[i])**(1/6)+1==(ls[i+1])**(1/6):
-            continue
-        else:
-            return False
-    return True
+    return nth_power_sum_check(6, ls)
 
 def print_series(ls, t):
     type= ["Fibbonaci","AP","GP","Sum of square","Sum of Cubes","Sum of N to 4th power","Sum of N to 5th power"]
