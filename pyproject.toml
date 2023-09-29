@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-series"
+version = "0.0.1"
+authors = [
+  { name="Vyom Jain", email="vyom.j@protonmail.com" },
+]
+description = "A small package for dealing with sequences and series in Python"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Vyvy-vi/py-series"
+"Bug Tracker" = "https://github.com/Vyvy-vi/py-series/issues"
+
