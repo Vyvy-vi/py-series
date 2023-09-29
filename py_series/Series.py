@@ -1,6 +1,5 @@
-import math
-from aps.aps import aps
-from gps.gps import gps
+from aps import generate_ap
+from gps import generate_gp
 def ui():
     ls = inp_ls()
     if fibonacci(ls):
@@ -9,13 +8,13 @@ def ui():
         print_series(ls, 1)
     elif gp(ls):
         print_series(ls, 2)
-    elif n2_sum(ls):
+    elif nth_power_sum_check(2, ls):
         print_series(ls, 3)
-    elif n3_sum(ls):
+    elif nth_power_sum_check(3, ls):
         print_series(ls, 4)
-    elif n4_sum(ls):
+    elif nth_power_sum_check(4, ls):
         print_series(ls, 5)
-    elif n5_sum(ls):
+    elif nth_power_sum_check(5, ls):
         print_series(ls, 6)
     else:
         print('The entered sequence might not be a series,\n\
@@ -64,24 +63,9 @@ def gp(ls):
 
 def nth_power_sum_check(n, ls):
     for i in range(len(ls) - 1):
-        if abs(ls[i] ** (1/n) - ls[i+1] ** (1/n)) > 1e-9:
+        if (ls[i] ** (1/n)) + 1 != ls[i+1] ** (1/n):
             return False
     return True
-
-def n2_sum(ls):
-    return nth_power_sum_check(2, ls)
-
-def n3_sum(ls):
-    return nth_power_sum_check(3, ls)
-
-def n4_sum(ls):
-    return nth_power_sum_check(4, ls)
-
-def n5_sum(ls):
-    return nth_power_sum_check(5, ls)
-
-def n6_sum(ls):
-    return nth_power_sum_check(6, ls)
 
 def print_series(ls, t):
     type= ["Fibbonaci","AP","GP","Sum of square","Sum of Cubes","Sum of N to 4th power","Sum of N to 5th power"]
@@ -91,13 +75,11 @@ def print_series(ls, t):
     if t==0:
         m,n= None,None
     elif t==1:
-        m,n= aps(ls[0],ls[1]-ls[0],n)
+        m,n= generate_ap(ls[0],ls[1]-ls[0],n)
     elif t==2:
-        m,n= gps(ls[0],ls[1]//ls[0],n)
+        m,n= generate_gp(ls[0],ls[1]//ls[0],n)
     else:
         m,n= None,None
     print(f'The series is given by:\n{m}...\nThe sum of the "{type}" is:\n{n}')
 
 ui()
-
-
