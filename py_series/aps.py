@@ -1,6 +1,6 @@
 def generate_ap(a, d, n):
     ls = [a]
-    for i in range(n - 1):
+    for _ in range(n - 1):
         a += d
         ls.append(a)
     return ls, sum(ls)

@@ -1,6 +1,6 @@
 def generate_gp(a, r, n):
     ls = [a]
-    for i in range(n - 1):
+    for _ in range(n - 1):
         a *= r
         ls.append(a)
     return ls, sum(ls)

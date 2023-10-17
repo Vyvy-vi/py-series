@@ -39,7 +39,6 @@ def inp_ls():
 
 
 def fibonacci(ls):
-    # ls=[1,1,2,3,5,8,13,21]
     for i in range(len(ls) - 2):
         j = i + 1
         k = i + 2
@@ -51,7 +50,6 @@ def fibonacci(ls):
 
 
 def ap(ls):
-    # ls=[1,2,3,4,5]
     for i in range(len(ls) - 2):
         if ls[i + 1] - ls[i] == ls[i + 2] - ls[i + 1]:
             continue
@@ -61,7 +59,6 @@ def ap(ls):
 
 
 def gp(ls):
-    # ls=[3,9,27,81,243,729]
     for i in range(len(ls) - 2):
         if ls[i + 1] / ls[i] == ls[i + 2] / ls[i + 1]:
             continue
