@@ -1,5 +1,7 @@
 from aps import generate_ap
 from gps import generate_gp
+from fib import generate_fib
+from kthpow import generate_kth_pow
 
 
 def ui():
@@ -79,23 +81,23 @@ def print_series(ls, t):
         "Fibbonaci",
         "AP",
         "GP",
-        "Sum of square",
-        "Sum of Cubes",
-        "Sum of N to 4th power",
-        "Sum of N to 5th power",
+        "Squares",
+        "Cubes",
+        "N to 4th power",
+        "N to 5th power",
     ]
     series_type = series_types[t]
 
     print(f'The type of this series is: "{series_type}"')
-    n = int(input("Enter no.of terms in series that you want to print: "))
+    n = int(input("Enter no. of terms in series that you want to print: "))
     if t == 0:
-        m, n = None, None
+        m, n = generate_fib(n)
     elif t == 1:
         m, n = generate_ap(ls[0], ls[1] - ls[0], n)
     elif t == 2:
         m, n = generate_gp(ls[0], ls[1] // ls[0], n)
-    else:
-        m, n = None, None
+    elif t < 7:
+        m, n = generate_kth_pow(ls[0], t - 1, n)
     print(f'The series is given by:\n{m}...\nThe sum of the "{series_type}" is:\n{n}')
 
 
