@@ -1,5 +1,6 @@
 from aps import generate_ap
 from gps import generate_gp
+from fib import generate_fib
 
 
 def ui():
@@ -89,7 +90,7 @@ def print_series(ls, t):
     print(f'The type of this series is: "{series_type}"')
     n = int(input("Enter no.of terms in series that you want to print: "))
     if t == 0:
-        m, n = None, None
+        m, n = generate_fib(n)
     elif t == 1:
         m, n = generate_ap(ls[0], ls[1] - ls[0], n)
     elif t == 2:
