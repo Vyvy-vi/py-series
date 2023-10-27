@@ -8,7 +8,7 @@ def ui():
     ls = inp_ls()
     if fibonacci(ls):
         print_series(ls, 0)
-    if ap(ls):
+    elif ap(ls):
         print_series(ls, 1)
     elif gp(ls):
         print_series(ls, 2)
@@ -98,8 +98,6 @@ def print_series(ls, t):
         m, n = generate_gp(ls[0], ls[1] // ls[0], n)
     elif t < 7:
         m, n = generate_kth_pow(ls[0], t - 1, n)
-    else:
-        m, n = None, None
     print(f'The series is given by:\n{m}...\nThe sum of the "{series_type}" is:\n{n}')
 
 
