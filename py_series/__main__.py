@@ -28,16 +28,8 @@ OR maybe you should consider going to wolfram :wink:"
 
 
 def inp_ls():
-    ls = []
-    print("You'll be prompted to enter the terms in the series.")
-    print("Press Q or some alphabets to quit.")
-    while True:
-        inp = input("Enter term of series: ")
-        if inp.isdigit():
-            ls.append(int(inp))
-        else:
-            break
-    return ls
+    inp = input(print("Enter the terms of the series (comma-separated): "))
+    return list(map(int, inp.split(" ")))
 
 
 def fibonacci(ls):
@@ -53,18 +45,14 @@ def fibonacci(ls):
 
 def ap(ls):
     for i in range(len(ls) - 2):
-        if ls[i + 1] - ls[i] == ls[i + 2] - ls[i + 1]:
-            continue
-        else:
+        if ls[i + 1] - ls[i] != ls[i + 2] - ls[i + 1]:
             return False
     return True
 
 
 def gp(ls):
     for i in range(len(ls) - 2):
-        if ls[i + 1] / ls[i] == ls[i + 2] / ls[i + 1]:
-            continue
-        else:
+        if ls[i + 1] / ls[i] != ls[i + 2] / ls[i + 1]:
             return False
     return True
 
